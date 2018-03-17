@@ -1,6 +1,6 @@
 <template>
     <div>
-        <input 
+        <input
             autocomplete="off"
             type="search"
             id="search"
