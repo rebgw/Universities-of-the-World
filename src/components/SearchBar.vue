@@ -10,6 +10,8 @@
             onblur="this.placeholder = 'Search for a University...'"
             aria-label="Search for a University"
             size="100"
+            v-model = "searchValue"
+            v-on:keyup = "search($event)"
         ></input>
     </div>
 </template>
@@ -20,7 +22,13 @@ export default {
   name: 'search-bar',
   data () {
     return {
+        searchValue: ''
     }
+  },
+  methods: {
+      search(event) {
+          console.log(this.searchValue)
+      }
   }
 }
 </script>

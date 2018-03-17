@@ -26,7 +26,7 @@
                 isLoaded: false,
             }
         },
-        mounted: function(){
+        created: function(){
             Vue.prototype.$database.ref('123').once('value').then(function(snapshot) {
                 console.log(snapshot.val())
             })
@@ -44,7 +44,7 @@ src: url("./../assets/fonts/kollektif.woff") format("woff");
 .uni {
     background-color: white;
     margin: 15px 0 15px 0;
-    padding: 35px;
+    padding: 35px 35px 40px 35px;
     min-height: 150px;
     min-width: 200px;
 }
