@@ -44,7 +44,7 @@ src: url("./../assets/fonts/kollektif.woff") format("woff");
 .uni {
   background-color: white;
   margin: 15px 0 15px 0;
-  padding: 35px 35px 40px 35px;
+  padding: 50px 35px 50px 35px;
   min-height: 150px;
   min-width: 200px;
 }
@@ -52,6 +52,7 @@ h1 {
   font-weight: 600;
   font-family: Kollektif;
   font-size: 28px;
+  margin-top: 0px;
 }
 h2 {
   font-family: Roboto;
