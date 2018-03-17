@@ -32,14 +32,14 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 #header {
-    color: white;
-    position: fixed;
-    width: 100%;
-    background-color: black;
-    font-size: 10px;
-    padding: 1px;
-    margin: -4px 0 0 0;
-    font-family: Roboto;
+  color: white;
+  position: fixed;
+  width: 100%;
+  background-color: black;
+  font-size: 10px;
+  padding: 1px;
+  margin: -4px 0 0 0;
+  font-family: Roboto;
 }
 
 #filler {
