@@ -1,0 +1,49 @@
+<template>
+    <div>
+        <input 
+            autocomplete="off"
+            type="search"
+            id="search"
+            name="q"
+            placeholder="Search for a University..."
+            onfocus="this.placeholder = ''"
+            onblur="this.placeholder = 'Search for a University...'"
+            aria-label="Search for a University"
+            size="100"
+        ></input>
+    </div>
+</template>
+
+<script>
+
+export default {
+  name: 'search-bar',
+  data () {
+    return {
+    }
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+    @font-face {
+    font-family: "Kollektif";
+    src: url("./../assets/fonts/kollektif.woff") format("woff");
+    }
+    input {
+        width: 100%;
+        height: 40px;
+        border: none;
+        color: grey;
+        background: transparent;
+        text-align: center;
+        font-family: 'Roboto';
+        font-weight: 300;
+        font-size: 15px;
+    }
+    input:focus {
+        outline: none;
+    }
+
+</style>
