@@ -27,6 +27,18 @@
   },
   {
     "web_pages": [
+      "http://www.uam.edu.ni/"
+    ],
+    "name": "Universidad Americana",
+    "alpha_two_code": "NI",
+    "state-province": null,
+    "domains": [
+      "uam.edu.ni"
+    ],
+    "country": "Nicaragua"
+  },
+  {
+    "web_pages": [
       "http://www.davietjal.org/"
     ],
     "name": "DAV Institute of Engineering & Technology",
@@ -494,6 +506,126 @@
       "park.edu"
     ],
     "country": "United States"
+  },
+  {
+    "web_pages": [
+      "http://www.auckland.ac.nz/"
+    ],
+    "name": "University of Auckland",
+    "alpha_two_code": "NZ",
+    "state-province": null,
+    "domains": [
+      "auckland.ac.nz"
+    ],
+    "country": "New Zealand"
+  },
+  {
+    "web_pages": [
+      "http://www.aut.ac.nz/"
+    ],
+    "name": "Auckland University of Technology",
+    "alpha_two_code": "NZ",
+    "state-province": null,
+    "domains": [
+      "aut.ac.nz"
+    ],
+    "country": "New Zealand"
+  },
+  {
+    "web_pages": [
+      "http://www.canterbury.ac.nz/"
+    ],
+    "name": "University of Canterbury",
+    "alpha_two_code": "NZ",
+    "state-province": null,
+    "domains": [
+      "canterbury.ac.nz"
+    ],
+    "country": "New Zealand"
+  },
+  {
+    "web_pages": [
+      "http://www.cpit.ac.nz/"
+    ],
+    "name": "Christchurch Polytechnic Institute of Technology",
+    "alpha_two_code": "NZ",
+    "state-province": null,
+    "domains": [
+      "cpit.ac.nz"
+    ],
+    "country": "New Zealand"
+  },
+  {
+    "web_pages": [
+      "http://www.lincoln.ac.nz/"
+    ],
+    "name": "Lincoln University",
+    "alpha_two_code": "NZ",
+    "state-province": null,
+    "domains": [
+      "lincoln.ac.nz"
+    ],
+    "country": "New Zealand"
+  },
+  {
+    "web_pages": [
+      "http://www.massey.ac.nz/"
+    ],
+    "name": "Massey University",
+    "alpha_two_code": "NZ",
+    "state-province": null,
+    "domains": [
+      "massey.ac.nz"
+    ],
+    "country": "New Zealand"
+  },
+  {
+    "web_pages": [
+      "http://www.openpolytechnic.ac.nz/"
+    ],
+    "name": "Open Polytechnic",
+    "alpha_two_code": "NZ",
+    "state-province": null,
+    "domains": [
+      "openpolytechnic.ac.nz"
+    ],
+    "country": "New Zealand"
+  },
+  {
+    "web_pages": [
+      "http://www.otago.ac.nz/"
+    ],
+    "name": "University of Otago",
+    "alpha_two_code": "NZ",
+    "state-province": null,
+    "domains": [
+      "otago.ac.nz"
+    ],
+    "country": "New Zealand"
+  },
+  {
+    "web_pages": [
+      "http://www.vuw.ac.nz/"
+    ],
+    "name": "Victoria University of Wellington",
+    "alpha_two_code": "NZ",
+    "state-province": null,
+    "domains": [
+      "vuw.ac.nz"
+    ],
+    "country": "New Zealand"
+  },
+  {
+    "web_pages": [
+      "http://www.waikato.ac.nz/"
+    ],
+    "name": "University of Waikato",
+    "alpha_two_code": "NZ",
+    "state-province": null,
+    "domains": [
+      "waikato.ac.nz"
+    ],
+    "country": "New Zealand"
   },
   {
     "web_pages": [

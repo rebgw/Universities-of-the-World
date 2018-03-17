@@ -35,12 +35,12 @@ export default {
         width: 100%;
         height: 40px;
         border: none;
-        color: grey;
+        color: black;
         background: transparent;
         text-align: center;
-        font-family: 'Roboto';
-        font-weight: 300;
-        font-size: 15px;
+        font-family: 'Kollektif';
+        font-weight: 600;
+        font-size: 20px;
     }
     input:focus {
         outline: none;
