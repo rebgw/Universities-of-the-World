@@ -10,19 +10,6 @@
 import Vue from 'Vue'
 import Firebase from 'firebase'
 
-// Initialize Firebase
-var config = {
-  apiKey: 'AIzaSyB799scvfDY0vXGSQmFVYRgeSVtCP0ZceI',
-  authDomain: 'universities-of-the-world.firebaseapp.com',
-  databaseURL: 'https://universities-of-the-world.firebaseio.com',
-  projectId: 'universities-of-the-world',
-  storageBucket: 'universities-of-the-world.appspot.com',
-  messagingSenderId: '301526515197'
-}
-
-let app = Firebase.initializeApp(config)
-Vue.prototype.$database = app.database()
-
 export default {
   name: 'App'
 }

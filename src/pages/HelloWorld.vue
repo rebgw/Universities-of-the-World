@@ -13,7 +13,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-
+      unis: ""
     }
   },
   components: {SearchBar, Universities}

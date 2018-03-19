@@ -1,35 +1,38 @@
 <template>
   <div>
-    <div class="uni" v-if="isLoaded">
-      <h1>Hey, I'm Loaded</h1>
-      <h1>{{uni123.name}}</h1>
-      <h2>{{uni123.country.toUpperCase()}}</h2>
-      <a v-bind:href="uni123.web_pages[0]" target="_blank">{{uni123.web_pages[1]}}</a>
-    </div>
-    <div class="uni" v-for="uni in unis">
+    <!-- <div class="uni" v-for="uni of unis" v-bind:key="uni['.key']">
       <h1>{{uni.name}}</h1>
       <h2>{{uni.country.toUpperCase()}}</h2>
       <a v-bind:href="uni.web_pages[0]" target="_blank">{{uni.web_pages[0]}}</a>
-    </div>
+    </div> -->
+    <button @click="submit()">Add</button>
   </div>
 </template>
 
 <script>
 import Vue from 'Vue'
 import unisJson from './../assets/unis_json'
+import { unisRef, testRef } from './../firebase'
+import uni from './uni'
 
 export default {
   name: 'universities',
   data () {
     return {
-      unis: unisJson,
-      isLoaded: false
+      unis: [],
+      isLoaded: false,
+      uni_name: 'UOA'
     }
   },
-  created () {
-    Vue.prototype.$database.ref('123').once('value').then(function(snapshot) {
-      console.log(snapshot.val())
-    })
+  firebase: {
+    unis: unisRef
+  },
+  methods: {
+    submit() {
+      uni.forEach(t => {
+        unisRef.push(t)
+      });
+    }
   }
 }
 </script>
