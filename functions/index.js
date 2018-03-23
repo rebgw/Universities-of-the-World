@@ -43,11 +43,8 @@ const db = app.database();
 const unisRef = db.ref('unis');
 const testRef = db.ref('test');
 
-var json = require('./test.json');
-
 exports.work = functions.https.onRequest((req, res) => {
-  console.log("L");
-  console.log(json);
-  testRef.push(JSON.parse(json));
-  return res.send('done');
+  return testRef.once('value').then(function(snapshot) {
+    res.send(snapshot.val())
+  })
 })

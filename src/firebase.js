@@ -11,4 +11,4 @@ const app = initializeApp({
 
 export const db = app.database();
 export const unisRef = db.ref('unis');
-export const testRef = db.ref('test');
+export var testRef = db.ref('test');
