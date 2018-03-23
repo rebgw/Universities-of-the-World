@@ -5,7 +5,7 @@
       <h2>{{uni.country.toUpperCase()}}</h2>
       <a v-bind:href="uni.web_pages[0]" target="_blank">{{uni.web_pages[0]}}</a>
     </div>
-    <button @click="change()">Change</button>
+    <infinite-loading @infinite="infiniteHandler"></infinite-loading>
   </div>
 </template>
 
@@ -13,23 +13,33 @@
 import Vue from 'Vue'
 import unisJson from './../assets/unis_json'
 import { unisRef, testRef } from './../firebase'
+import InfiniteLoading from 'vue-infinite-loading';
 
 export default {
   name: 'universities',
+  components: {
+    InfiniteLoading
+  },
   data () {
     return {
+      unis: [],
+      lastUniId: "",
     }
-  },
-  firebase: {
-    unis: testRef
   },
   methods: {
-    getUnis () {
-      this.$http
+    infiniteHandler($state) {
+      this.$http.get("http://localhost:5000/universities-of-the-world/us-central1/work?size=5&startId="+this.lastUniId).then(function(data){
+        let keys = Object.keys(data.body)
+        keys.forEach(key => {
+          if (key !== keys[keys.length-1]){
+            this.unis.push(data.body[key])
+          } else {
+            this.lastUniId = key
+          }
+        });
+        $state.loaded()
+      })
     }
-  },
-  created() {
-    this.$http.get("")
   }
 }
 </script>

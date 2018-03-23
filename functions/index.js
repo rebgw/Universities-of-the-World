@@ -37,6 +37,7 @@
 
 const functions = require('firebase-functions');
 const app = require('firebase-admin');
+const cors = require('cors')({origin: true});
 app.initializeApp(functions.config().firebase);
 
 const db = app.database();
@@ -44,7 +45,15 @@ const unisRef = db.ref('unis');
 const testRef = db.ref('test');
 
 exports.work = functions.https.onRequest((req, res) => {
-  return testRef.once('value').then(function(snapshot) {
-    res.send(snapshot.val())
+  cors(req, res, () => {
+    let startId = ""
+    console.log(req.query.startId)
+    if (req.query.startId !== undefined){
+      startId = req.query.startId
+    }
+    let size = parseInt(req.query.size)
+    return unisRef.orderByKey().startAt(startId).limitToFirst(size).once('value').then(function(snapshot) {
+      res.send(snapshot.val())
+    })
   })
 })
