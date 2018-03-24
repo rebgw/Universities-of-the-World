@@ -1,12 +1,12 @@
 <template>
   <div class="hello">
-    <search-bar></search-bar>
+    <!-- <search-bar></search-bar> -->
     <universities></universities>
   </div>
 </template>
 
 <script>
-import SearchBar from './../components/SearchBar.vue'
+// import SearchBar from './../components/SearchBar.vue'
 import Universities from './../components/Universities.vue'
 
 export default {
@@ -16,7 +16,9 @@ export default {
       unis: ""
     }
   },
-  components: {SearchBar, Universities}
+  components: {
+    // SearchBar,
+    Universities}
 }
 </script>
 

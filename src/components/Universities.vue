@@ -1,5 +1,18 @@
 <template>
   <div>
+    <input
+      autocomplete="off"
+      type="search"
+      id="search"
+      name="q"
+      placeholder="Search for a University..."
+      onfocus="this.placeholder = ''"
+      onblur="this.placeholder = 'Search for a University...'"
+      aria-label="Search for a University"
+      size="100"
+      v-model = "searchValue"
+      v-on:keyup.enter = "search($event)"
+    />
     <div class="uni" v-for="uni of unis" v-bind:key="uni['.key']">
       <h1>{{uni.name}}</h1>
       <h2>{{uni.country.toUpperCase()}}</h2>
@@ -13,7 +26,7 @@
 import Vue from 'Vue'
 import unisJson from './../assets/unis_json'
 import { unisRef, testRef } from './../firebase'
-import InfiniteLoading from 'vue-infinite-loading';
+import InfiniteLoading from 'vue-infinite-loading'
 
 export default {
   name: 'universities',
@@ -23,21 +36,36 @@ export default {
   data () {
     return {
       unis: [],
-      lastUniId: "",
+      startId: "",
+      searchValue: "",
+      query: ""
     }
   },
   methods: {
     infiniteHandler($state) {
-      this.$http.get("http://localhost:5000/universities-of-the-world/us-central1/work?size=5&startId="+this.lastUniId).then(function(data){
+      this.$http.get(this.$apiUrl + "unis?size=10&startId="+this.startId).then(function(data){
         let keys = Object.keys(data.body)
         keys.forEach(key => {
           if (key !== keys[keys.length-1]){
             this.unis.push(data.body[key])
           } else {
-            this.lastUniId = key
+            this.startId = key
           }
         });
         $state.loaded()
+      })
+    },
+    search (event) {
+      this.$http.get(this.$apiUrl + "search?term=" + this.searchValue).then(function(data){
+        this.unis = []
+        let keys = Object.keys(data.body)
+        keys.forEach(key => {
+          if (key !== keys[keys.length-1]){
+            this.unis.push(data.body[key])
+          } else {
+            this.startId = key
+          }
+        })
       })
     }
   }
@@ -54,7 +82,7 @@ src: url("./../assets/fonts/kollektif.woff") format("woff");
 .uni {
   background-color: white;
   margin: 15px 0 15px 0;
-  padding: 50px 35px 50px 35px;
+  padding: 80px 35px 35px 35px;
   min-height: 150px;
   min-width: 200px;
 }
@@ -73,6 +101,21 @@ a {
   color: black;
   text-decoration: none;
   font-size: 15px;
+}
+
+input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  color: black;
+  background: transparent;
+  text-align: center;
+  font-family: 'Kollektif';
+  font-weight: 600;
+  font-size: 20px;
+}
+input:focus {
+  outline: none;
 }
 
 </style>

@@ -1,40 +1,3 @@
-// const functions = require('firebase-functions');
-// const app = require('firebase-admin');
-// app.initializeApp(functions.config().firebase);
-
-// export const db = app.database();
-// export const namesRef = db.ref('1234');
-
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//  response.send("Hello from Firebase!");
-// });
-
-// exports.getUnis = functions.https.onRequest((req, res) => {
-//   // let unis = [];
-
-//   // for (var i = parseInt(req.query.startId); i < parseInt(req.query.size); i++ ){
-//   //   let database = admin.database().ref(toString(i));
-//   //   database.then(uni => {
-//   //     unis.push(uni);
-//   //   })
-//   // }
-
-//   // while (unis.length != req.query.size) {
-//   //   let a ='b';
-//   // }
-//   // res.status(200).send(unis);
-//   return admin.database().ref('/1234').then((uni) => {
-//     return res.send(uni.ref);
-//   })
-// })
-
-// exports.work = functions.https.onRequest((req, res) => {
-//   res.send(functions.config().firebase);
-// })
-
 const functions = require('firebase-functions');
 const app = require('firebase-admin');
 const cors = require('cors')({origin: true});
@@ -44,16 +7,24 @@ const db = app.database();
 const unisRef = db.ref('unis');
 const testRef = db.ref('test');
 
-exports.work = functions.https.onRequest((req, res) => {
+exports.unis = functions.https.onRequest((req, res) => {
   cors(req, res, () => {
     let startId = ""
-    console.log(req.query.startId)
     if (req.query.startId !== undefined){
       startId = req.query.startId
     }
     let size = parseInt(req.query.size)
     return unisRef.orderByKey().startAt(startId).limitToFirst(size).once('value').then(function(snapshot) {
-      res.send(snapshot.val())
+      return res.send(snapshot.val())
+    })
+  })
+})
+
+exports.search = functions.https.onRequest((req, res) => {
+  cors(req, res, () => {
+    let term = req.query.term
+    return unisRef.orderByChild('name').startAt(term).limitToFirst(50).once('value').then(function(snapshot) {
+      return res.send(snapshot.val())
     })
   })
 })

@@ -1,4 +1,4 @@
-<template>
+<!--template>
   <div>
     <input
       autocomplete="off"
@@ -16,7 +16,8 @@
   </div>
 </template>
 
-<script>
+<script> 
+import EventBus from './../buses/bus.js'
 
 export default {
   name: 'search-bar',
@@ -27,14 +28,15 @@ export default {
   },
   methods: {
     search (event) {
-      console.log(this.searchValue)
+      console.log('Search Bar', this.searchValue)
+      EventBus.$emit('search', this.searchValue)
     }
   }
 }
-</script>
+</script> -->
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<!-- <style scoped>
   @font-face {
   font-family: "Kollektif";
   src: url("./../assets/fonts/kollektif.woff") format("woff");
@@ -54,4 +56,4 @@ export default {
     outline: none;
   }
 
-</style>
+</style> -->
