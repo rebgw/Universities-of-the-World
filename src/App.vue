@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <div id="header"><h1>Universities of the World</h1></div>
+    <div class="header">
+      <img class="logo" src="./assets/logo.png" alt="Universities of the World"/>
+    </div>
     <div id="filler"></div>
     <router-view/>
   </div>
@@ -17,26 +19,28 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Lilita+One');
 
-#header {
+.header {
   color: white;
-  position: fixed;
   width: 100%;
-  background-color: black;
+  background-color: #2b475e;
   font-size: 10px;
-  padding: 1px;
-  margin: -4px 0 0 0;
-  font-family: Roboto;
+  padding-bottom: 15px;
+  margin: -4px 0 0px 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-
+.logo {
+  height: 200px;
+}
 #filler {
-    height: 70px;
+    height: 100px
 }
-
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #2b475e;
+  font-family: 'Lilita One', cursive;
 }
 </style>
