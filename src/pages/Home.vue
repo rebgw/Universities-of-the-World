@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="home">
     <universities></universities>
   </div>
 </template>
@@ -8,19 +8,14 @@
 import Universities from './../components/Universities.vue'
 
 export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      unis: ""
-    }
-  },
+  name: 'Home',
   components: {
     Universities}
 }
 </script>
 
 <style scoped>
-  .hello {
+  .home {
       margin: -80px 40px 15px 40px;
   }
 </style>

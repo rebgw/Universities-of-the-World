@@ -7,7 +7,7 @@
       name="q"
       placeholder="Search for a University"
       onfocus="this.placeholder = ''"
-      onblur="this.placeholder = 'Search for a University...'"
+      onblur="this.placeholder = 'Search for a University'"
       aria-label="Search for a University"
       size="100"
       v-model = "searchValue"
@@ -24,8 +24,6 @@
 
 <script>
 import Vue from 'Vue'
-import unisJson from './../assets/unis_json'
-import { unisRef, testRef } from './../firebase'
 import InfiniteLoading from 'vue-infinite-loading'
 
 export default {
@@ -72,15 +70,9 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Lilita+One');
 
-@font-face {
-font-family: "Kollektif";
-src: url("./../assets/fonts/kollektif/kollektif.woff") format("woff");
-}
 .uni {
   background-color: white;
   border-color: #2b475e;
@@ -98,27 +90,32 @@ h1 {
 }
 h2 {
   font-size: 15px;
+  font-weight: 50;
 }
 a {
-  color: black;
+  color: #2b475e;
   text-decoration: none;
   font-size: 15px;
 }
 input {
   width: 100%;
+  min-width: 200px;
   height: 40px;
   border: none;
   font-weight: 10;
-  color: rgb(99, 99, 99);
+  color: #2b475e;
   background: white;
   font-family: 'Lilita One', cursive;
   text-align: center;
-  font-size: 16px;
+  font-size: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05);
   border-radius: 7px;
 }
 input:focus {
   outline: none;
+}
+input::placeholder {
+  color: #2b475e;
 }
 
 </style>
