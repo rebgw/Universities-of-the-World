@@ -23,7 +23,6 @@
 </template>
 
 <script>
-import Vue from 'Vue'
 import InfiniteLoading from 'vue-infinite-loading'
 
 export default {
@@ -34,17 +33,17 @@ export default {
   data () {
     return {
       unis: [],
-      startId: "",
-      searchValue: "",
-      query: ""
+      startId: '',
+      searchValue: '',
+      query: ''
     }
   },
   methods: {
-    infiniteHandler($state) {
-      this.$http.get(this.$apiUrl + "unis?size=10&startId="+this.startId).then(function(data){
+    infiniteHandler ($state) {
+      this.$http.get (this.$apiUrl + 'unis?size=10&startId=' + this.startId).then(function(data) {
         let keys = Object.keys(data.body)
         keys.forEach(key => {
-          if (key !== keys[keys.length-1]){
+          if (key !== keys[keys.length - 1]) {
             this.unis.push(data.body[key])
           } else {
             this.startId = key
@@ -55,10 +54,10 @@ export default {
     },
     search (event) {
       this.unis = []
-      this.$http.get(this.$apiUrl + "search?term=" + this.searchValue).then(function(data){
+      this.$http.get (this.$apiUrl + 'search?term=' + this.searchValue).then(function(data) {
         let keys = Object.keys(data.body)
         keys.forEach(key => {
-          if (key !== keys[keys.length-1]){
+          if (key !== keys[keys.length - 1]) {
             this.unis.push(data.body[key])
           } else {
             this.startId = key

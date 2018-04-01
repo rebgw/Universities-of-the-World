@@ -16,7 +16,7 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
-   
-let prodUrl = "https://us-central1-universities-of-the-world.cloudfunctions.net/"
-let devUrl = "http://localhost:5000/universities-of-the-world/us-central1/"
+
+let prodUrl = 'https://us-central1-universities-of-the-world.cloudfunctions.net/'
+let devUrl = 'http://localhost:5000/universities-of-the-world/us-central1/'
 Vue.prototype.$apiUrl = prodUrl
