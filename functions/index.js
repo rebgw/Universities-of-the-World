@@ -5,7 +5,7 @@ app.initializeApp(functions.config().firebase);
 
 const db = app.database();
 const unisRef = db.ref('unis');
-const testRef = db.ref('test');
+const https = require('https');
 
 exports.unis = functions.https.onRequest((req, res) => {
   cors(req, res, () => {
@@ -25,6 +25,15 @@ exports.search = functions.https.onRequest((req, res) => {
     let term = req.query.term
     return unisRef.orderByChild('name').startAt(term).limitToFirst(50).once('value').then(function(snapshot) {
       return res.send(snapshot.val())
+    })
+  })
+})
+
+exports.uniInfo = functions.https.onRequest((req, res) => {
+  cors(req, res, () => {
+    let url = req.query.url
+    return https.get('http://api.linkpreview.net/?key=5aad9e366222568209dc20595f15c48ddcfbe866ef7b1&q=' + url, (response) => {
+      return res.send(response)
     })
   })
 })

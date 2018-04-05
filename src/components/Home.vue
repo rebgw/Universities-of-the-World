@@ -1,21 +1,25 @@
 <template>
   <div class="home">
+    <banner name="UNIVERSITIES" secondaryName="OF THE WORLD"></banner>
     <universities></universities>
   </div>
 </template>
 
 <script>
 import Universities from './../components/Universities.vue'
+import Banner from './../components/Banner.vue'
 
 export default {
   name: 'Home',
   components: {
-    Universities}
+    Universities,
+    Banner
+  }
 }
 </script>
 
 <style scoped>
-  .home {
-      margin: -80px 40px 15px 40px;
-  }
+banner {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+}
 </style>

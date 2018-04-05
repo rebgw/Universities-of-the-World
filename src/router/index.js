@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/pages/Home'
+import Home from '@/components/Home'
+import SingleUniversity from '@/components/SingleUniversity'
 
 Vue.use(Router)
 
@@ -10,6 +11,11 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/uni/:name/:country/:url',
+      name: 'SingleUniversity',
+      component: SingleUniversity
     }
   ]
 })
