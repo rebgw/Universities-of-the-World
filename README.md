@@ -1,6 +1,4 @@
-# universities
-
-> Universities
+## <a href="https://universities-of-the-world.firebaseapp.com/#/">Deployed on Firebase Hosting</a>
 
 ## Build Setup
 
